@@ -3,7 +3,9 @@
 # ~~~~
 
 # Home page
-GET     /                                       dashboard.index
+GET     /                                       home.index
+GET     /dashboard                              dashboard.index
+GET     /about                                  about.index
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
