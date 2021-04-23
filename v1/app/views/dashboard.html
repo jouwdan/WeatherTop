@@ -3,5 +3,7 @@
 #{nav id:"dashboard" /}
 #{hero /}
 <div class="container">
-    #{showStation /}
+    #{list items:stations, as:'station'}
+    #{showStation /}   
+    #{/list}
 </div>

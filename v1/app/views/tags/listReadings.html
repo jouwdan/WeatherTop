@@ -1,0 +1,18 @@
+<table class="table is-bordered is-fullwidth">
+    <thead>
+        <tr>
+            <th>Code</th>
+            <th>Temp</th>
+            <th>Wind Speed</th>
+        </tr>
+    </thead>
+    <tbody>
+        #{list items:_station.readings, as:'reading'}
+        <tr>
+            <td>${reading.code}</td>
+            <td>${reading.temperature}</td>
+            <td>${reading.windSpeed}</td>
+        </tr>
+        #{/list}
+    </tbody>
+</table>
