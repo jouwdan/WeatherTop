@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-content">
             <h2 class="title">
-                Tramore
+                ${station.name}
             </h2>
             <div class="block">
                 <table class="table is-bordered is-fullwidth">
@@ -14,16 +14,18 @@
                         </tr>
                     </thead>
                     <tbody>
+                        #{list items:_station.readings, as:'reading'}
                         <tr>
-                            <td>800</td>
-                            <td>0.5</td>
-                            <td>3.5</td>
+                            <td>${reading.code}</td>
+                            <td>${reading.temperature}</td>
+                            <td>${reading.windSpeed}</td>
                         </tr>
                         <tr>
                             <td>600</td>
                             <td>6.0</td>
                             <td>2.0</td>
                         </tr>
+                        #{/list}
                     </tbody>
                 </table>
             </div>
