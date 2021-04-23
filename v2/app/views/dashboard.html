@@ -101,6 +101,9 @@
                     </div>
                     <div class="column is-one-fifth">
                         <p class="notification is-info">Pressure</p>
+                        <p>
+                            ${station.readings.pressure.get(station.readings.pressure.size() - 1)} bpa
+                        </p>
                     </div>
                 </div>
                 #{listreadings station:station/}
