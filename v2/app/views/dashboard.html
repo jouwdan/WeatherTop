@@ -1,0 +1,19 @@
+#{extends 'main.html' /}
+#{set title:'Dashboard' /}
+#{nav id:"dashboard" /}
+#{hero /}
+<div class="container">
+    #{list items:stations, as:'station'}
+    <div class="block">
+        <div class="card">
+            <div class="card-content">
+                <h2 class="title">
+                    ${station.name}
+                </h2>
+                
+                #{listreadings station:station/}
+            </div>
+        </div>
+    </div>
+    #{/list}
+</div>
