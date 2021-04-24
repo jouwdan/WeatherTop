@@ -1,0 +1,125 @@
+<div class="columns">
+    <div class="column is-one-fifth">
+        <article class="message is-info">
+            <div class="message-header">
+                Location
+            </div>
+            <div class="message-body">
+                ${_station.name}
+            </div>
+        </article>
+    </div>
+    <div class="column is-one-fifth">
+        <article class="message is-info">
+            <div class="message-header">
+                Weather
+            </div>
+            <div class="message-body">
+                <p>
+                    #{if _station.readings.code.get(_station.readings.code.size() - 1) == 100}
+                    Clear
+                    #{/if}
+                    #{elseif _station.readings.code.get(_station.readings.code.size() - 1) == 200}
+                    Partial Clouds
+                    #{/elseif}
+                    #{elseif _station.readings.code.get(_station.readings.code.size() - 1) == 300}
+                    Cloudy
+                    #{/elseif}
+                    #{elseif _station.readings.code.get(_station.readings.code.size() - 1) == 400}
+                    Light Showers
+                    #{/elseif}
+                    #{elseif _station.readings.code.get(_station.readings.code.size() - 1) == 500}
+                    Heavy Showers
+                    #{/elseif}
+                    #{elseif _station.readings.code.get(_station.readings.code.size() - 1) == 600}
+                    Rain
+                    #{/elseif}
+                    #{elseif _station.readings.code.get(_station.readings.code.size() - 1) == 700}
+                    Snow
+                    #{/elseif}
+                    #{elseif _station.readings.code.get(_station.readings.code.size() - 1) == 800}
+                    Thunder
+                    #{/elseif}
+                    #{else}
+                    Unknown
+                    #{/else}
+                </p>
+            </div>
+        </article>
+    </div>
+    <div class="column is-one-fifth">
+        <article class="message is-info">
+            <div class="message-header">
+                Temperature
+            </div>
+            <div class="message-body">
+                <p>
+                    ${_station.readings.temperature.get(_station.readings.temperature.size() - 1)}°C <br/>
+                    ${(_station.readings.temperature.get(_station.readings.temperature.size() - 1)) *
+                    (9/5) + 32}°F
+                </p>
+            </div>
+        </article>
+    </div>
+    <div class="column is-one-fifth">
+        <article class="message is-info">
+            <div class="message-header">
+                Wind
+            </div>
+            <div class="message-body">
+                <p>
+                    #{if _station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1) <= 1}
+                    0 bft
+                    #{/if}
+                    #{elseif _station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1) > 1 && _station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1) <= 5 }
+                    1 bft
+                    #{/elseif}
+                    #{elseif _station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1) > 5 && _station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1) <= 11 }
+                    2 bft
+                    #{/elseif}
+                    #{elseif _station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1) > 11 && _station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1) <= 19 }
+                    3 bft
+                    #{/elseif}
+                    #{elseif _station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1) > 19 && _station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1) <= 28 }
+                    4 bft
+                    #{/elseif}
+                    #{elseif _station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1) > 28 && _station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1) <= 38 }
+                    5 bft
+                    #{/elseif}
+                    #{elseif _station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1) > 38 && _station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1) <= 49 }
+                    6 bft
+                    #{/elseif}
+                    #{elseif _station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1) > 49 && _station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1) <= 61 }
+                    7 bft
+                    #{/elseif}
+                    #{elseif _station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1) > 61 && _station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1) <= 74 }
+                    8 bft
+                    #{/elseif}
+                    #{elseif _station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1) > 74 && _station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1) <= 88 }
+                    9 bft
+                    #{/elseif}
+                    #{elseif _station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1) > 88 && _station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1) <= 102 }
+                    10 bft
+                    #{/elseif}
+                    #{elseif _station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1) > 102 && _station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1) <= 117 }
+                    11 bft
+                    #{/elseif}
+                    #{else}
+                    Unknown
+                    #{/else}
+                </p>
+            </div>
+        </article>
+    </div>
+    <div class="column is-one-fifth">
+        <article class="message is-info">
+            <div class="message-header">Pressure
+            </div>
+            <div class="message-body">
+                <p>
+                    ${_station.readings.pressure.get(_station.readings.pressure.size() - 1)} bpa
+                </p>
+            </div>
+        </article>
+    </div>
+</div>
