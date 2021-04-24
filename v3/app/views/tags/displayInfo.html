@@ -108,12 +108,63 @@
                     Unknown
                     #{/else}
                 </p>
+                <p>
+                    #{if _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) >= 11.25 && _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) < 33.75}
+                    North North East
+                    #{/if}
+                    #{elseif _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) >= 33.75 && _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) < 56.25}
+                    North East
+                    #{/elseif}
+                    #{elseif _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) >= 56.25 && _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) < 78.75}
+                    East North East
+                    #{/elseif}
+                    #{elseif _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) >= 78.75 && _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) < 101.25}
+                    East
+                    #{/elseif}
+                    #{elseif _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) >= 101.25 && _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) < 123.75}
+                    East South East
+                    #{/elseif}
+                    #{elseif _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) >= 123.75 && _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) < 146.25}
+                    South East
+                    #{/elseif}
+                    #{elseif _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) >= 146.25 && _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) < 168.75}
+                    South South East
+                    #{/elseif}
+                    #{elseif _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) >= 168.75 && _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) < 191.25}
+                    South
+                    #{/elseif}
+                    #{elseif _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) >= 191.25 && _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) < 213.75}
+                    South South West
+                    #{/elseif}
+                    #{elseif _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) >= 213.75 && _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) < 236.25}
+                    South West
+                    #{/elseif}
+                    #{elseif _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) >= 236.25 && _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) < 258.75}
+                    West South West
+                    #{/elseif}
+                    #{elseif _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) >= 258.75 && _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) < 281.25}
+                    West
+                    #{/elseif}
+                    #{elseif _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) >= 281.25 && _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) < 303.75}
+                    West North West
+                    #{/elseif}
+                    #{elseif _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) >= 303.75 && _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) < 326.25}
+                    North West
+                    #{/elseif}
+                    #{elseif _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) >= 326.25 && _station.readings.windDirection.get(_station.readings.windDirection.size() - 1) < 348.75}
+                    North North West
+                    #{/elseif}
+                    #{else}
+                    North
+                    #{/else}
+                </p>
             </div>
         </article>
     </div>
     <div class="column is-one-fifth">
         <article class="message is-info">
-            <div class="message-header">Pressure
+            <div class="message-header">
+                Pressure
             </div>
             <div class="message-body">
                 <p>
