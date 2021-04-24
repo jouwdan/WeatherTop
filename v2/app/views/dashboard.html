@@ -12,98 +12,127 @@
                 </h2>
                 <div class="columns">
                     <div class="column is-one-fifth">
-                        <p class="notification is-info">${station.name}</p>
+                        <article class="message is-info">
+                            <div class="message-header">
+                                Location
+                            </div>
+                            <div class="message-body">
+                                ${station.name}
+                            </div>
+                        </article>
                     </div>
                     <div class="column is-one-fifth">
-                        <p class="notification is-info">Weather</p>
-                        <p>
-                            #{if station.readings.code.get(station.readings.code.size() - 1) == 100}
-                            Clear
-                            #{/if}
-                            #{elseif station.readings.code.get(station.readings.code.size() - 1) == 200}
-                            Partial Clouds
-                            #{/elseif}
-                            #{elseif station.readings.code.get(station.readings.code.size() - 1) == 300}
-                            Cloudy
-                            #{/elseif}
-                            #{elseif station.readings.code.get(station.readings.code.size() - 1) == 400}
-                            Light Showers
-                            #{/elseif}
-                            #{elseif station.readings.code.get(station.readings.code.size() - 1) == 500}
-                            Heavy Showers
-                            #{/elseif}
-                            #{elseif station.readings.code.get(station.readings.code.size() - 1) == 600}
-                            Rain
-                            #{/elseif}
-                            #{elseif station.readings.code.get(station.readings.code.size() - 1) == 700}
-                            Snow
-                            #{/elseif}
-                            #{elseif station.readings.code.get(station.readings.code.size() - 1) == 800}
-                            Thunder
-                            #{/elseif}
-                            #{else}
-                            Unknown
-                            #{/else}
-                        </p>
+                        <article class="message is-info">
+                            <div class="message-header">
+                                Weather
+                            </div>
+                            <div class="message-body">
+                                <p>
+                                    #{if station.readings.code.get(station.readings.code.size() - 1) == 100}
+                                    Clear
+                                    #{/if}
+                                    #{elseif station.readings.code.get(station.readings.code.size() - 1) == 200}
+                                    Partial Clouds
+                                    #{/elseif}
+                                    #{elseif station.readings.code.get(station.readings.code.size() - 1) == 300}
+                                    Cloudy
+                                    #{/elseif}
+                                    #{elseif station.readings.code.get(station.readings.code.size() - 1) == 400}
+                                    Light Showers
+                                    #{/elseif}
+                                    #{elseif station.readings.code.get(station.readings.code.size() - 1) == 500}
+                                    Heavy Showers
+                                    #{/elseif}
+                                    #{elseif station.readings.code.get(station.readings.code.size() - 1) == 600}
+                                    Rain
+                                    #{/elseif}
+                                    #{elseif station.readings.code.get(station.readings.code.size() - 1) == 700}
+                                    Snow
+                                    #{/elseif}
+                                    #{elseif station.readings.code.get(station.readings.code.size() - 1) == 800}
+                                    Thunder
+                                    #{/elseif}
+                                    #{else}
+                                    Unknown
+                                    #{/else}
+                                </p>
+                            </div>
+                        </article>
                     </div>
                     <div class="column is-one-fifth">
-                        <p class="notification is-info">Temperature</p>
-                        <p>
-                            ${station.readings.temperature.get(station.readings.temperature.size() - 1)} °C
-                        </p>
-                        <p>
-                            ${(station.readings.temperature.get(station.readings.temperature.size() - 1)) * (9/5) + 32} °F
-                        </p>
+                        <article class="message is-info">
+                            <div class="message-header">
+                                temperature
+                            </div>
+                            <div class="message-body">
+                                <p>
+                                    ${station.readings.temperature.get(station.readings.temperature.size() - 1)}°C /
+                                    ${(station.readings.temperature.get(station.readings.temperature.size() - 1)) *
+                                    (9/5) + 32}°F
+                                </p>
+                            </div>
+                        </article>
                     </div>
                     <div class="column is-one-fifth">
-                        <p class="notification is-info">Wind</p>
-                        <p>
-                            #{if station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) <= 1}
-                            0 bft
-                            #{/if}
-                            #{elseif station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) > 1 && station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) <= 5 }
-                            1 bft
-                            #{/elseif}
-                            #{elseif station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) > 5 && station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) <= 11 }
-                            2 bft
-                            #{/elseif}
-                            #{elseif station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) > 11 && station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) <= 19 }
-                            3 bft
-                            #{/elseif}
-                            #{elseif station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) > 19 && station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) <= 28 }
-                            4 bft
-                            #{/elseif}
-                            #{elseif station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) > 28 && station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) <= 38 }
-                            5 bft
-                            #{/elseif}
-                            #{elseif station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) > 38 && station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) <= 49 }
-                            6 bft
-                            #{/elseif}
-                            #{elseif station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) > 49 && station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) <= 61 }
-                            7 bft
-                            #{/elseif}
-                            #{elseif station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) > 61 && station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) <= 74 }
-                            8 bft
-                            #{/elseif}
-                            #{elseif station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) > 74 && station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) <= 88 }
-                            9 bft
-                            #{/elseif}
-                            #{elseif station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) > 88 && station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) <= 102 }
-                            10 bft
-                            #{/elseif}
-                            #{elseif station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) > 102 && station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) <= 117 }
-                            11 bft
-                            #{/elseif}
-                            #{else}
-                            Unknown
-                            #{/else}
-                        </p>
+                        <article class="message is-info">
+                            <div class="message-header">
+                                Wind
+                            </div>
+                            <div class="message-body">
+                                <p>
+                                    #{if station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) <= 1}
+                                    0 bft
+                                    #{/if}
+                                    #{elseif station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) > 1 && station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) <= 5 }
+                                    1 bft
+                                    #{/elseif}
+                                    #{elseif station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) > 5 && station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) <= 11 }
+                                    2 bft
+                                    #{/elseif}
+                                    #{elseif station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) > 11 && station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) <= 19 }
+                                    3 bft
+                                    #{/elseif}
+                                    #{elseif station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) > 19 && station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) <= 28 }
+                                    4 bft
+                                    #{/elseif}
+                                    #{elseif station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) > 28 && station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) <= 38 }
+                                    5 bft
+                                    #{/elseif}
+                                    #{elseif station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) > 38 && station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) <= 49 }
+                                    6 bft
+                                    #{/elseif}
+                                    #{elseif station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) > 49 && station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) <= 61 }
+                                    7 bft
+                                    #{/elseif}
+                                    #{elseif station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) > 61 && station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) <= 74 }
+                                    8 bft
+                                    #{/elseif}
+                                    #{elseif station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) > 74 && station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) <= 88 }
+                                    9 bft
+                                    #{/elseif}
+                                    #{elseif station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) > 88 && station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) <= 102 }
+                                    10 bft
+                                    #{/elseif}
+                                    #{elseif station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) > 102 && station.readings.windSpeed.get(station.readings.windSpeed.size() - 1) <= 117 }
+                                    11 bft
+                                    #{/elseif}
+                                    #{else}
+                                    Unknown
+                                    #{/else}
+                                </p>
+                            </div>
+                        </article>
                     </div>
                     <div class="column is-one-fifth">
-                        <p class="notification is-info">Pressure</p>
-                        <p>
-                            ${station.readings.pressure.get(station.readings.pressure.size() - 1)} bpa
-                        </p>
+                        <article class="message is-info">
+                            <div class="message-header">Pressure
+                            </div>
+                            <div class="message-body">
+                                <p>
+                                    ${station.readings.pressure.get(station.readings.pressure.size() - 1)} bpa
+                                </p>
+                            </div>
+                        </article>
                     </div>
                 </div>
                 #{listreadings station:station/}
