@@ -21,41 +21,43 @@
     <div class="card">
         <div class="card-content">
             <h2 class="title has-text-centered">Add Reading</h2>
+            <form action="/station/${station.id}/addreading" method="post">
             <div class="columns is-multiline">
-                <div class="column is-one-third">
+                <div class="column is-4">
                     <div class="field">
                         <label class="label">Code</label>
-                        <input class="input" type="text" placeholder="Code">
+                        <input class="input" type="text" placeholder="Code" name="code">
                     </div>
                 </div>
-                <div class="column is-one-third">
+                <div class="column is-4">
                     <div class="field">
                         <label class="label">Temperature</label>
-                        <input class="input" type="text" placeholder="Temperature">
+                        <input class="input" type="text" placeholder="Temperature" name="temperature">
                     </div>
                 </div>
-                <div class="column is-one-third">
+                <div class="column is-4">
                     <div class="field">
                         <label class="label">Wind Speed</label>
-                        <input class="input" type="text" placeholder="Wind Speed">
+                        <input class="input" type="text" placeholder="Wind Speed" name="windSpeed">
                     </div>
                 </div>
-                <div class="column is-one-third">
+                <div class="column is-4">
                     <div class="field">
                         <label class="label">Wind Direction</label>
-                        <input class="input" type="text" placeholder="Wind Direction">
+                        <input class="input" type="text" placeholder="Wind Direction" name = "windDirection">
                     </div>
                 </div>
-                <div class="column is-one-third">
+                <div class="column is-4">
                     <div class="field">
                         <label class="label">Pressure</label>
-                        <input class="input" type="text" placeholder="Pressure">
+                        <input class="input" type="text" placeholder="Pressure" name="pressure">
                     </div>
                 </div>
-                <div class="column is-two-thirds">
-                    <button class="button is-info">Add Reading</button>
+                <div class="column is-12">
+                    <button class="button is-info submit">Add Reading</button>
                 </div>
             </div>
+            </form>
         </div>
     </div>
 </div>
