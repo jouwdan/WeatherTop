@@ -158,6 +158,12 @@
                     North
                     #{/else}
                 </p>
+                <p>
+                    Feels like
+                </p>
+                <p>
+                    ${Math.round((13.12 + 0.6215 * _station.readings.temperature.get(_station.readings.temperature.size() - 1) - 11.37 * Math.pow(_station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1), 0.16) + 0.3965 * _station.readings.temperature.get(_station.readings.temperature.size() - 1) * Math.pow(_station.readings.windSpeed.get(_station.readings.windSpeed.size() - 1), 0.16)) * 10) / 10.0}
+                </p>
             </div>
         </article>
     </div>
