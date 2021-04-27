@@ -3,17 +3,26 @@
 #{nav id:"dashboard" /}
 #{hero /}
 <div class="container">
+    <div class="columns is-multiline is-mobile">
     #{list items:stations, as:'station'}
-    <div class="block">
+    <div class="column is-one-quarter">
         <div class="card">
             <div class="card-content">
                 <h2 class="title">
                     ${station.name}
                 </h2>
-                #{displayInfo station:station /}
-                #{listReadings station:station/}
+                <a href="/station/${station.id}"><button class="button is-info">View Station</button></a>
             </div>
         </div>
     </div>
     #{/list}
+    <div class="column is-one-quarter">
+        <div class="card">
+            <div class="card-content">
+                <input class="input" type="text" placeholder="Station Name"> <br> <br>
+                <button class="button is-info">Add Station</button>
+            </div>
+        </div>
+    </div>
+</div>
 </div>

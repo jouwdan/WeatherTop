@@ -1,0 +1,60 @@
+#{extends 'main.html' /}
+#{set title:'Station' /}
+#{nav id:"dashboard" /}
+#{hero /}
+
+<div class="container">
+    <div class="card">
+        <div class="card-content">
+            <h2 class="title has-text-centered">Latest Reading Info</h2>
+            #{displayInfo station:station /}
+        </div>
+    </div>
+    <br>
+    <div class="card">
+        <div class="card-content">
+            <h2 class="title has-text-centered">Reading History</h2>
+            #{listReadings station:station/}
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-content">
+            <h2 class="title has-text-centered">Add Reading</h2>
+            <div class="columns is-multiline">
+                <div class="column is-one-third">
+                    <div class="field">
+                        <label class="label">Code</label>
+                        <input class="input" type="text" placeholder="Code">
+                    </div>
+                </div>
+                <div class="column is-one-third">
+                    <div class="field">
+                        <label class="label">Temperature</label>
+                        <input class="input" type="text" placeholder="Temperature">
+                    </div>
+                </div>
+                <div class="column is-one-third">
+                    <div class="field">
+                        <label class="label">Wind Speed</label>
+                        <input class="input" type="text" placeholder="Wind Speed">
+                    </div>
+                </div>
+                <div class="column is-one-third">
+                    <div class="field">
+                        <label class="label">Wind Direction</label>
+                        <input class="input" type="text" placeholder="Wind Direction">
+                    </div>
+                </div>
+                <div class="column is-one-third">
+                    <div class="field">
+                        <label class="label">Pressure</label>
+                        <input class="input" type="text" placeholder="Pressure">
+                    </div>
+                </div>
+                <div class="column is-two-thirds">
+                    <button class="button is-info">Add Reading</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
