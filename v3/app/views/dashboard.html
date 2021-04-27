@@ -16,11 +16,26 @@
         </div>
     </div>
     #{/list}
-    <div class="column is-one-quarter">
+    <div class="column is-12">
         <div class="card">
             <div class="card-content">
-                <input class="input" type="text" placeholder="Station Name"> <br> <br>
-                <button class="button is-info">Add Station</button>
+                    <form action="/dashboard/addStation" method="post">
+                <div class="columns is-multiline">
+                    <div class="column is-12">
+                        <input class="input" type="text" placeholder="Station Name" name="name">
+                    </div>
+                    <div class="column is-6">
+                        <input class="input" type="text" placeholder="Latitude" name="lat">
+                    </div>
+                    <div class="column is-6">
+                        <input class="input" type="text" placeholder="Longitude" name="lng">
+                    </div>
+                    <div class="column is-12">
+                        <button class="button is-info submit">Add Station</button>
+                    </div>
+
+                </div>
+                    </form>
             </div>
         </div>
     </div>

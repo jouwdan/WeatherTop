@@ -1,6 +1,6 @@
 #{extends 'main.html' /}
-#{set title:'Station' /}
-#{nav id:"dashboard" /}
+#{set title: station.name /}
+#{nav id: "dashboard" /}
 #{hero /}
 
 <div class="container">
@@ -17,6 +17,7 @@
             #{listReadings station:station/}
         </div>
     </div>
+    <br>
     <div class="card">
         <div class="card-content">
             <h2 class="title has-text-centered">Add Reading</h2>
