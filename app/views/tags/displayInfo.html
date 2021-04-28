@@ -1,3 +1,4 @@
+#{if _station.readings.size() > 0}
 <div class="columns">
     <div class="column is-one-fifth">
         <article class="message is-info">
@@ -54,9 +55,8 @@
             </div>
             <div class="message-body">
                 <p>
-                    ${_station.readings.temperature.last()}°C <br/>
-                    ${(_station.readings.temperature.last()) *
-                    (9/5) + 32}°F
+                    ${_station.readings.temperature.last()} °C <br/>
+                    ${(_station.readings.temperature.last()) * (9/5) + 32} °F
                 </p>
             </div>
         </article>
@@ -180,3 +180,8 @@
         </article>
     </div>
 </div>
+#{/if}
+
+#{else}
+<p>No readings have been found!</p>
+#{/else}
