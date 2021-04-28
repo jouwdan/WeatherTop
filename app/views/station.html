@@ -1,0 +1,63 @@
+#{extends 'main.html' /}
+#{set title: station.name /}
+#{nav id: "dashboard" /}
+#{hero /}
+
+<div class="container">
+    <div class="card">
+        <div class="card-content">
+            <h2 class="title has-text-centered">Latest Reading Info</h2>
+            #{displayInfo station:station /}
+        </div>
+    </div>
+    <br>
+    <div class="card">
+        <div class="card-content">
+            <h2 class="title has-text-centered">Reading History</h2>
+            #{listReadings station:station/}
+        </div>
+    </div>
+    <br>
+    <div class="card">
+        <div class="card-content">
+            <h2 class="title has-text-centered">Add Reading</h2>
+            <form action="/station/${station.id}/addreading" method="post">
+            <div class="columns is-multiline">
+                <div class="column is-4">
+                    <div class="field">
+                        <label class="label">Code</label>
+                        <input class="input" type="text" placeholder="Code" name="code">
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="field">
+                        <label class="label">Temperature</label>
+                        <input class="input" type="text" placeholder="Temperature" name="temperature">
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="field">
+                        <label class="label">Wind Speed</label>
+                        <input class="input" type="text" placeholder="Wind Speed" name="windSpeed">
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="field">
+                        <label class="label">Wind Direction</label>
+                        <input class="input" type="text" placeholder="Wind Direction" name = "windDirection">
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="field">
+                        <label class="label">Pressure</label>
+                        <input class="input" type="text" placeholder="Pressure" name="pressure">
+                    </div>
+                </div>
+                <div class="column is-12">
+                    <button class="button is-info submit">Add Reading</button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
