@@ -16,7 +16,9 @@ public class Station extends Model {
     public double lng;   
     @OneToMany(cascade = CascadeType.ALL)
     public List<Reading> readings = new ArrayList<Reading>();
-    
+
+    public double temperatureInFahrenheit;
+
     public Station(String name, double lat, double lng) {
         this.name = name;
         this.lat = lat;
