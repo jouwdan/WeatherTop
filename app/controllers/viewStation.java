@@ -13,6 +13,7 @@ public class viewStation extends Controller {
         Station station = Station.findById(id);
         Reading lastReading = station.readings.get(station.readings.size() - 1);
         station.temperatureInFahrenheit = WeatherUtility.celsiusToFahrenheit(lastReading.temperature);
+        station.weatherCodeToString = WeatherUtility.weatherCodeToString(lastReading.code);
         Logger.info("Station id = " + id);
         render ("station.html", station);
     }

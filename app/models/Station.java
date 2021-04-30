@@ -18,6 +18,7 @@ public class Station extends Model {
     public List<Reading> readings = new ArrayList<Reading>();
 
     public double temperatureInFahrenheit;
+    public String weatherCodeToString;
 
     public Station(String name, double lat, double lng) {
         this.name = name;

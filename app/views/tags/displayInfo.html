@@ -17,33 +17,7 @@
             </div>
             <div class="message-body">
                 <p>
-                    #{if _station.readings.code.last() == 100}
-                    Clear
-                    #{/if}
-                    #{elseif _station.readings.code.last() == 200}
-                    Partial Clouds
-                    #{/elseif}
-                    #{elseif _station.readings.code.last() == 300}
-                    Cloudy
-                    #{/elseif}
-                    #{elseif _station.readings.code.last() == 400}
-                    Light Showers
-                    #{/elseif}
-                    #{elseif _station.readings.code.last() == 500}
-                    Heavy Showers
-                    #{/elseif}
-                    #{elseif _station.readings.code.last() == 600}
-                    Rain
-                    #{/elseif}
-                    #{elseif _station.readings.code.last() == 700}
-                    Snow
-                    #{/elseif}
-                    #{elseif _station.readings.code.last() == 800}
-                    Thunder
-                    #{/elseif}
-                    #{else}
-                    Unknown
-                    #{/else}
+                    ${_station.weatherCodeToString}
                 </p>
             </div>
         </article>
