@@ -42,101 +42,13 @@
             </div>
             <div class="message-body">
                 <p>
-                    #{if _station.readings.windSpeed.last() <= 1}
-                    0 bft
-                    #{/if}
-                    #{elseif _station.readings.windSpeed.last() > 1 && _station.readings.windSpeed.last() <= 5 }
-                    1 bft
-                    #{/elseif}
-                    #{elseif _station.readings.windSpeed.last() > 5 && _station.readings.windSpeed.last() <= 11 }
-                    2 bft
-                    #{/elseif}
-                    #{elseif _station.readings.windSpeed.last() > 11 && _station.readings.windSpeed.last() <= 19 }
-                    3 bft
-                    #{/elseif}
-                    #{elseif _station.readings.windSpeed.last() > 19 && _station.readings.windSpeed.last() <= 28 }
-                    4 bft
-                    #{/elseif}
-                    #{elseif _station.readings.windSpeed.last() > 28 && _station.readings.windSpeed.last() <= 38 }
-                    5 bft
-                    #{/elseif}
-                    #{elseif _station.readings.windSpeed.last() > 38 && _station.readings.windSpeed.last() <= 49 }
-                    6 bft
-                    #{/elseif}
-                    #{elseif _station.readings.windSpeed.last() > 49 && _station.readings.windSpeed.last() <= 61 }
-                    7 bft
-                    #{/elseif}
-                    #{elseif _station.readings.windSpeed.last() > 61 && _station.readings.windSpeed.last() <= 74 }
-                    8 bft
-                    #{/elseif}
-                    #{elseif _station.readings.windSpeed.last() > 74 && _station.readings.windSpeed.last() <= 88 }
-                    9 bft
-                    #{/elseif}
-                    #{elseif _station.readings.windSpeed.last() > 88 && _station.readings.windSpeed.last() <= 102 }
-                    10 bft
-                    #{/elseif}
-                    #{elseif _station.readings.windSpeed.last() > 102 && _station.readings.windSpeed.last() <= 117 }
-                    11 bft
-                    #{/elseif}
-                    #{else}
-                    Unknown
-                    #{/else}
+                    ${_station.windSpeedToBft}
                 </p>
                 <p>
-                    #{if _station.readings.windDirection.last() >= 11.25 && _station.readings.windDirection.last() < 33.75}
-                    North North East
-                    #{/if}
-                    #{elseif _station.readings.windDirection.last() >= 33.75 && _station.readings.windDirection.last() < 56.25}
-                    North East
-                    #{/elseif}
-                    #{elseif _station.readings.windDirection.last() >= 56.25 && _station.readings.windDirection.last() < 78.75}
-                    East North East
-                    #{/elseif}
-                    #{elseif _station.readings.windDirection.last() >= 78.75 && _station.readings.windDirection.last() < 101.25}
-                    East
-                    #{/elseif}
-                    #{elseif _station.readings.windDirection.last() >= 101.25 && _station.readings.windDirection.last() < 123.75}
-                    East South East
-                    #{/elseif}
-                    #{elseif _station.readings.windDirection.last() >= 123.75 && _station.readings.windDirection.last() < 146.25}
-                    South East
-                    #{/elseif}
-                    #{elseif _station.readings.windDirection.last() >= 146.25 && _station.readings.windDirection.last() < 168.75}
-                    South South East
-                    #{/elseif}
-                    #{elseif _station.readings.windDirection.last() >= 168.75 && _station.readings.windDirection.last() < 191.25}
-                    South
-                    #{/elseif}
-                    #{elseif _station.readings.windDirection.last() >= 191.25 && _station.readings.windDirection.last() < 213.75}
-                    South South West
-                    #{/elseif}
-                    #{elseif _station.readings.windDirection.last() >= 213.75 && _station.readings.windDirection.last() < 236.25}
-                    South West
-                    #{/elseif}
-                    #{elseif _station.readings.windDirection.last() >= 236.25 && _station.readings.windDirection.last() < 258.75}
-                    West South West
-                    #{/elseif}
-                    #{elseif _station.readings.windDirection.last() >= 258.75 && _station.readings.windDirection.last() < 281.25}
-                    West
-                    #{/elseif}
-                    #{elseif _station.readings.windDirection.last() >= 281.25 && _station.readings.windDirection.last() < 303.75}
-                    West North West
-                    #{/elseif}
-                    #{elseif _station.readings.windDirection.last() >= 303.75 && _station.readings.windDirection.last() < 326.25}
-                    North West
-                    #{/elseif}
-                    #{elseif _station.readings.windDirection.last() >= 326.25 && _station.readings.windDirection.last() < 348.75}
-                    North North West
-                    #{/elseif}
-                    #{else}
-                    North
-                    #{/else}
+                    ${_station.windDirectionToText}
                 </p>
                 <p>
-                    Feels like
-                </p>
-                <p>
-                    ${Math.round((13.12 + 0.6215 * _station.readings.temperature.last() - 11.37 * Math.pow(_station.readings.windSpeed.last(), 0.16) + 0.3965 * _station.readings.temperature.last() * Math.pow(_station.readings.windSpeed.last(), 0.16)) * 10) / 10.0}
+                    Feels like ${_station.feelsLike} °C
                 </p>
             </div>
         </article>

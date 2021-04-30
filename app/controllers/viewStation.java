@@ -14,6 +14,9 @@ public class viewStation extends Controller {
         Reading lastReading = station.readings.get(station.readings.size() - 1);
         station.temperatureInFahrenheit = WeatherUtility.celsiusToFahrenheit(lastReading.temperature);
         station.weatherCodeToString = WeatherUtility.weatherCodeToString(lastReading.code);
+        station.feelsLike = WeatherUtility.feelsLike(lastReading.temperature, lastReading.windSpeed);
+        station.windSpeedToBft = WeatherUtility.windSpeedToBft(lastReading.windSpeed);
+        station.windDirectionToText = WeatherUtility.windDirectionToText(lastReading.windDirection);
         Logger.info("Station id = " + id);
         render ("station.html", station);
     }

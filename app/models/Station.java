@@ -19,6 +19,9 @@ public class Station extends Model {
 
     public double temperatureInFahrenheit;
     public String weatherCodeToString;
+    public double feelsLike;
+    public String windSpeedToBft;
+    public String windDirectionToText;
 
     public Station(String name, double lat, double lng) {
         this.name = name;
