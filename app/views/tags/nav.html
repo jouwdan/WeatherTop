@@ -4,6 +4,11 @@
       <a class="navbar-item" href="../">
         <p class="has-text-weight-semibold">WeatherTop</p>
       </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
 
     <div class="navbar-menu">
@@ -17,4 +22,17 @@
 </nav>
 <script>
   $("#${_id}").addClass("is-active has-text-weight-semibold");
+</script>
+<script>
+  $(document).ready(function() {
+
+// Check for click events on the navbar burger icon
+$(".navbar-burger").click(function() {
+
+    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+    $(".navbar-burger").toggleClass("is-active");
+    $(".navbar-menu").toggleClass("is-active");
+
+});
+});
 </script>
