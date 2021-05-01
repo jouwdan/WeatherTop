@@ -12,8 +12,8 @@ import play.db.jpa.Model;
 @Entity
 public class Station extends Model {
     public String name;
-    public double lat;
-    public double lng;   
+    public double latitude;
+    public double longitude;   
     @OneToMany(cascade = CascadeType.ALL)
     public List<Reading> readings = new ArrayList<Reading>();
 
@@ -23,9 +23,9 @@ public class Station extends Model {
     public String windSpeedToBft;
     public String windDirectionToText;
 
-    public Station(String name, double lat, double lng) {
+    public Station(String name, double latitude, double longitude) {
         this.name = name;
-        this.lat = lat;
-        this.lng = lng;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 }
