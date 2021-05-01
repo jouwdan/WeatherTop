@@ -14,8 +14,11 @@
     <div class="navbar-menu">
       <div class="navbar-end">
         <a id="home" class="navbar-item" href="../">Home</a>
-        <a id="dashboard" class="navbar-item" href="/dashboard">Dashboard</a>
+        #{if session.contains("logged_in_Memberid")}<a id="dashboard" class="navbar-item" href="/dashboard">Dashboard</a>#{/if}
         <a id="about" class="navbar-item" href="/about">About</a>
+        #{ifnot session.contains("logged_in_Memberid")}<a id="register" class="navbar-item" href="/register">Register</a>#{/ifnot}
+        #{ifnot session.contains("logged_in_Memberid")}<a id="login" class="navbar-item" href="/login">Log In</a>#{/ifnot}
+        #{if session.contains("logged_in_Memberid")}<a id="logout" class="navbar-item" href="/logout">Log Out</a>#{/if}
       </div>
     </div>
   </div>

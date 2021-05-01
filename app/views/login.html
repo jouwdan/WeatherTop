@@ -1,0 +1,36 @@
+#{extends 'main.html' /}
+#{set title:'login' /}
+#{nav id:"login"/}
+#{hero /}
+
+<div class="container">
+    <div class="columns is-centered">
+        <div class="column is-half">
+            <br><br><br>
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="title has-text-centered">Log In</h2>
+                    <form action="/authentication" method="post">
+                        <div class="columns is-multiline">
+                            <div class="column is-full">
+                                <div class="field">
+                                    <label class="label">Email</label>
+                                    <input class="input" type="email" placeholder="your@email.com" name="email">
+                                </div>
+                            </div>
+                            <div class="column is-full">
+                                <div class="field">
+                                    <label class="label">Password</label>
+                                    <input class="input" type="password" placeholder="**********" name="password">
+                                </div>
+                            </div>
+                            <div class="column is-full">
+                                <button class="button is-info submit is-fullwidth">Log In</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -5,8 +5,13 @@
 GET     /                                       home.index
 GET     /dashboard                              dashboard.index
 GET     /about                                  about.index
+GET     /register                               Accounts.register
+GET     /login                                  Accounts.login
+GET     /logout                                 Accounts.logout
 GET     /station/{id}                           viewStation.index
 
+POST    /registration                           Accounts.registration
+POST    /authentication                         Accounts.authentication
 POST    /dashboard/addstation                   dashboard.addStation
 POST    /station/{id}/addreading                viewStation.addReading
 
