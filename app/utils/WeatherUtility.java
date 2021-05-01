@@ -11,23 +11,23 @@ public class WeatherUtility {
     public static String weatherCodeToString(int weatherCode) {
         String weatherCodeToString;
         if (weatherCode == 100) {
-            weatherCodeToString = "Clear";
+            weatherCodeToString = "<span class='icon is-large'><i class='fas fa-2x fa-sun'></i></span><br>Clear";
         } else if (weatherCode == 200) {
-            weatherCodeToString = "Partial Clouds";
+            weatherCodeToString = "<span class='icon is-large'><i class='fas fa-2x fa-cloud-sun'></i></span><br>Partial Clouds";
         } else if (weatherCode == 300) {
-            weatherCodeToString = "Cloudy";
+            weatherCodeToString = "<span class='icon is-large'><i class='fas fa-2x fa-cloud'></i></span><br>Cloudy";
         } else if (weatherCode == 400) {
-            weatherCodeToString = "Light Showers";
+            weatherCodeToString = "<span class='icon is-large'><i class='fas fa-2x fa-cloud-sun-rain'></i></span><br>Light Showers";
         } else if (weatherCode == 500) {
-            weatherCodeToString = "Heavy Showers";
+            weatherCodeToString = "<span class='icon is-large'><i class='fas fa-2x fa-cloud-showers-heavy'></i></span><br>Heavy Showers";
         } else if (weatherCode == 600) {
-            weatherCodeToString = "Rain";
+            weatherCodeToString = "<span class='icon is-large'><i class='fas fa-2x fa-cloud-rain'></i></span><br>Rain";
         } else if (weatherCode == 700) {
-            weatherCodeToString = "Snow";
+            weatherCodeToString = "<span class='icon is-large'><i class='fas fa-2x fa-snowflake'></i></span><br>Snow";
         } else if (weatherCode == 800) {
-            weatherCodeToString = "Thunder";
+            weatherCodeToString = "<span class='icon is-large'><i class='fas fa-2x fa-bolt'></i></span><br>Thunder";
         } else {
-            weatherCodeToString = "Unknown";
+            weatherCodeToString = "<span class='icon is-large'><i class='fas fa-2x fa-poo-storm'></i></span><br>Unknown";
         }
         return weatherCodeToString;
     }
