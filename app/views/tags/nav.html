@@ -12,11 +12,15 @@
     </div>
 
     <div class="navbar-menu">
-      <div class="navbar-end">
-        #{if session.contains("logged_in_Memberid")}
-        <a id="home" class="navbar-item" href="../">Home</a>
+      #{if session.contains("logged_in_Memberid")}
         <a id="dashboard" class="navbar-item" href="/dashboard">Dashboard</a>
         <a id="about" class="navbar-item" href="/about">About</a>
+      #{/if}
+      #{ifnot session.contains("logged_in_Memberid")}
+        <a id="about" class="navbar-item" href="/about">About</a>
+      #{/ifnot}
+      <div class="navbar-end">
+        #{if session.contains("logged_in_Memberid")}
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">Account</a>
           <div class="navbar-dropdown is-right">
@@ -26,8 +30,6 @@
         </div>
         #{/if}
         #{ifnot session.contains("logged_in_Memberid")}
-        <a id="home" class="navbar-item" href="../">Home</a>
-        <a id="about" class="navbar-item" href="/about">About</a>
         <a id="register" class="navbar-item" href="/register">Register</a>
         <a id="login" class="navbar-item" href="/login">Log In</a>
         #{/ifnot}
