@@ -4,6 +4,7 @@ import play.Logger;import play.mvc.Controller;
 
 import models.Station;
 import models.Reading;
+import models.Member;
 import utils.WeatherUtility;
 import play.Logger;
 import play.mvc.Controller;

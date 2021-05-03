@@ -8,6 +8,7 @@
                 <th>Wind Speed</th>
                 <th>Wind Direction</th>
                 <th>Pressure</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -19,6 +20,7 @@
                 <td>${reading.windSpeed}</td>
                 <td>${reading.windDirection}</td>
                 <td>${reading.pressure}</td>
+                <td><div class="icon-text"><span class="icon has-text-danger"><i class="fas fa-trash-alt"></i></span></div></td>
             </tr>
             #{/list}
         </tbody>
