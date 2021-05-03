@@ -43,15 +43,11 @@
                 Wind
             </div>
             <div class="message-body">
-                <p>
-                    ${_station.windSpeedToBft}
-                </p>
-                <p>
-                    ${_station.windDirectionToText}
-                </p>
-                <p>
-                    Feels like ${_station.feelsLike} °C
-                </p>
+                <p>${_station.windSpeedToBft}</p>
+                <p>${_station.windDirectionToText}</p>
+                <p>Feels like ${_station.feelsLike} °C</p>
+                <p>min: ${_station.minWindSpeed}</p>
+                <p>max: ${_station.maxWindSpeed}</p>
             </div>
         </article>
     </div>
@@ -61,9 +57,11 @@
                 Pressure
             </div>
             <div class="message-body">
-                <p>
-                    ${_station.readings.pressure.last()} bpa
-                </p>
+                <p>${_station.readings.pressure.last()} bpa</p>
+                <br>
+                <p>min: ${_station.minPressure} bpa</p>
+                <p>max: ${_station.maxPressure} bpa</p>
+                
             </div>
         </article>
     </div>

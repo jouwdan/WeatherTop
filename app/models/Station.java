@@ -22,6 +22,10 @@ public class Station extends Model {
     public double feelsLike;
     public String windSpeedToBft;
     public String windDirectionToText;
+    public double minWindSpeed;
+    public double maxWindSpeed;
+    public double minPressure;
+    public double maxPressure;
 
     public Station(String name, double latitude, double longitude) {
         this.name = name;
