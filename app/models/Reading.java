@@ -1,10 +1,12 @@
 package models;
 
 import javax.persistence.Entity;
+import java.util.Date;
 import play.db.jpa.Model;
 
 @Entity
 public class Reading extends Model {
+    public Date date;
     public int code;
     public double temperature;
     public double windSpeed;
@@ -12,7 +14,8 @@ public class Reading extends Model {
     public int pressure;
     public double windChill;
     
-    public Reading(int code, double temperature, double windSpeed, double windDirection, int pressure) {
+    public Reading(Date date, int code, double temperature, double windSpeed, double windDirection, int pressure) {
+        this.date = date;
         this.code = code;
         this.temperature = temperature;
         this.windSpeed = windSpeed;

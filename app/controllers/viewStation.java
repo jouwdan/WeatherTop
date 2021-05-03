@@ -7,6 +7,7 @@ import models.Reading;
 import utils.WeatherUtility;
 import play.Logger;
 import play.mvc.Controller;
+import java.util.Date;
 
 public class viewStation extends Controller {
     public static void index(long id) {
@@ -52,7 +53,8 @@ public class viewStation extends Controller {
     }
 
     public static void addReading(Long id, int code, double temperature, double windSpeed, double windDirection, int pressure) {
-        Reading reading = new Reading(code, temperature, windSpeed, windDirection, pressure);
+        Date date = new Date();
+        Reading reading = new Reading(date, code, temperature, windSpeed, windDirection, pressure);
         Station station = Station.findById(id);
         station.readings.add(reading);
         station.save();
