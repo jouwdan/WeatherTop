@@ -17,6 +17,6 @@ public class stationControl extends Controller {
         station.readings.remove(reading);
         station.save();
         reading.delete();
-        render("station.html", station);
+        redirect("/station/" + id);
     }
 }
