@@ -31,6 +31,9 @@ public class dashboard extends Controller {
 
     public static void deleteStation (Long id) {
         Station station = Station.findById(id);
+        for (Reading reading : station.readings) {
+            reading.delete();
+        }
         Logger.info ("Deleting Station: " + station.name);
         station.delete();
         redirect("/dashboard");
