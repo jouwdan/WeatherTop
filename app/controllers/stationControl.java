@@ -9,7 +9,7 @@ import models.Reading;
 import play.Logger;
 import play.mvc.Controller;
 
-public class stationControl extends Controller {
+public class stationControl extends Controller {    
     public static void deleteReading (Long id, Long readingid) {
         Station station = Station.findById(id);
         Reading reading = Reading.findById(readingid);

@@ -29,4 +29,10 @@ public class dashboard extends Controller {
         redirect ("/dashboard");
     }
 
+    public static void deleteStation (Long id) {
+        Station station = Station.findById(id);
+        Logger.info ("Deleting Station: " + station.name);
+        station.delete();
+        redirect("/dashboard");
+    }
 }

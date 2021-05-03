@@ -9,6 +9,7 @@ GET     /register                               Accounts.register
 GET     /login                                  Accounts.login
 GET     /logout                                 Accounts.logout
 GET     /station/{id}                           viewStation.index
+GET     /dashboard/deletestation/{id}           dashboard.deleteStation
 GET     /station/{id}/deletereading/{readingid} stationControl.deleteReading
 
 POST    /registration                           Accounts.registration
