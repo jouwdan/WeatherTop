@@ -6,12 +6,14 @@ import java.util.List;
 import models.Station;
 import models.Reading;
 import models.Member;
+import utils.WeatherUtility;
 import play.Logger;
 import play.mvc.Controller;
 
 public class dashboard extends Controller {
 
     public static void index() {
+
         Logger.info("Rendering Dashboard");
         Member member = accounts.getLoggedInMember();
         List<Station> stations = member.stations;
