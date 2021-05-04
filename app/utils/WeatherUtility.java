@@ -1,6 +1,8 @@
 package utils;
 
 import play.Logger;
+import models.Reading;
+import models.Station;
 
 public class WeatherUtility {
     public static double celsiusToFahrenheit(double celsiusInput) {
@@ -110,4 +112,39 @@ public class WeatherUtility {
         }
         return windDirectionToText;
     }
+
+    public static void updateWeather(Station station) {
+        if (station.readings.size() > 0) {
+          Reading lastReading = station.readings.get(station.readings.size() - 1);
+          station.temperatureInFahrenheit = WeatherUtility.celsiusToFahrenheit(lastReading.temperature);
+          station.weatherCodeToString = WeatherUtility.weatherCodeToString(lastReading.code);
+          station.feelsLike = WeatherUtility.feelsLike(lastReading.temperature, lastReading.windSpeed);
+          station.windSpeedToBft = WeatherUtility.windSpeedToBft(lastReading.windSpeed);
+          station.windDirectionToText = WeatherUtility.windDirectionToText(lastReading.windDirection);
+          double minWindSpeed = 999999999999.0;
+          double maxWindSpeed = 0.0;
+          for (Reading reading : station.readings) {
+            if (reading.windSpeed < minWindSpeed) {
+              minWindSpeed = reading.windSpeed;
+            }
+            if (reading.windSpeed > maxWindSpeed) {
+              maxWindSpeed = reading.windSpeed;
+            }
+          }
+          station.minWindSpeed = minWindSpeed;
+          station.maxWindSpeed = maxWindSpeed;
+          int minPressure = 2147483647;
+          int maxPressure = 0;
+          for (Reading reading : station.readings) {
+            if (reading.pressure < minPressure) {
+              minPressure = reading.pressure;
+            }
+            if (reading.pressure > maxPressure) {
+              maxPressure = reading.pressure;
+            }
+          }
+          station.minPressure = minPressure;
+          station.maxPressure = maxPressure;
+        }
+      }
 }

@@ -13,10 +13,12 @@ import play.mvc.Controller;
 public class dashboard extends Controller {
 
     public static void index() {
-
         Logger.info("Rendering Dashboard");
         Member member = accounts.getLoggedInMember();
         List<Station> stations = member.stations;
+        for (Station station:member.stations) {
+            WeatherUtility.updateWeather(station);
+        }
         render ("dashboard.html", stations);
     }
 
