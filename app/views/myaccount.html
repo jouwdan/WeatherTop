@@ -1,0 +1,48 @@
+#{extends 'main.html' /}
+#{set title:'My Account' /}
+#{nav id:"account", member:member /}
+#{hero /}
+
+<div class="container">
+    <div class="columns is-centered">
+        <div class="column is-half">
+            <br><br><br>
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="title has-text-centered">Update Account</h2>
+                    <form action="/myaccount/edit/${member.id}" method="post">
+                        <div class="columns is-multiline">
+                            <div class="column is-half">
+                                <div class="field">
+                                    <label class="label">First Name</label>
+                                    <input class="input " type="text" value="${member.firstname}" name="firstname">
+                                </div>
+                            </div>
+                            <div class="column is-half">
+                                <div class="field">
+                                    <label class="label">Last Name</label>
+                                    <input class="input " type="text" value="${member.lastname}" name="lastname">
+                                </div>
+                            </div>
+                            <div class="column is-half">
+                                <div class="field">
+                                    <label class="label">Email</label>
+                                    <input class="input " type="email" value="${member.email}" name="email">
+                                </div>
+                            </div>
+                            <div class="column is-half">
+                                <div class="field">
+                                    <label class="label">Password</label>
+                                    <input class="input " type="password" value="${member.password}" name="password">
+                                </div>
+                            </div>
+                            <div class="column is-full">
+                                <button class="button is-info submit is-fullwidth">Save Changes</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

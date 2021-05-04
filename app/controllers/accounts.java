@@ -39,6 +39,18 @@ public class accounts extends Controller
     }
   }
 
+  public static void edit(Long id, String firstname, String lastname, String email, String password)
+  {
+    Logger.info("Editing User " + email);
+    Member member = Member.findById(id);
+    member.firstname = firstname;
+    member.lastname = lastname;
+    member.email = email;
+    member.password = password;
+    member.save();
+    redirect("/myaccount");
+  }
+
   public static void logout()
   {
     session.clear();
