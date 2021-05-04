@@ -13,16 +13,16 @@
                     <form action="/dashboard/addStation" method="post">
                         <div class="columns is-multiline">
                             <div class="column is-3">
-                                <input class="input is-rounded" type="text" placeholder="Station Name" name="name">
+                                <input class="input " type="text" placeholder="Station Name" name="name">
                             </div>
                             <div class="column is-3">
-                                <input class="input is-rounded" type="text" placeholder="Latitude" name="lat">
+                                <input class="input " type="text" placeholder="Latitude" name="lat">
                             </div>
                             <div class="column is-3">
-                                <input class="input is-rounded" type="text" placeholder="Longitude" name="lng">
+                                <input class="input " type="text" placeholder="Longitude" name="lng">
                             </div>
                             <div class="column is-3">
-                                <button class="button is-info submit is-fullwidth is-rounded">Add Station</button>
+                                <button class="button is-info submit is-fullwidth ">Add Station</button>
                             </div>
     
                         </div>
@@ -39,8 +39,8 @@
                     </h2>
                     #{displayInfo station:station/}
                     <div class="buttons is-centered">
-                        <a href="/station/${station.id}"><button class="button is-info is-rounded">View Station</button></a>
-                        <a href="/dashboard/deletestation/${station.id}"><button class="button is-danger is-rounded">Delete Station</button></a>
+                        <a href="/station/${station.id}"><button class="button is-info ">View Station</button></a>
+                        <a href="/dashboard/deletestation/${station.id}"><button class="button is-danger ">Delete Station</button></a>
                     </div>
                 </div>
             </div>

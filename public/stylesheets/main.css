@@ -3,3 +3,7 @@
     border: 1px solid #eee !important;
     box-shadow: none !important;
 }
+
+.navbar {
+    border-bottom: 1px solid #eee;
+}
