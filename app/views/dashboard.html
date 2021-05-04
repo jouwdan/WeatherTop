@@ -4,6 +4,32 @@
 #{hero /}
 <div class="container">
     <div class="columns is-multiline is-mobile">
+        <div class="column is-12">
+            <div class="card">
+                <div class="card-content">
+                    <h2 class="title">
+                        Add New Station
+                    </h2>
+                    <form action="/dashboard/addStation" method="post">
+                        <div class="columns is-multiline">
+                            <div class="column is-3">
+                                <input class="input is-rounded" type="text" placeholder="Station Name" name="name">
+                            </div>
+                            <div class="column is-3">
+                                <input class="input is-rounded" type="text" placeholder="Latitude" name="lat">
+                            </div>
+                            <div class="column is-3">
+                                <input class="input is-rounded" type="text" placeholder="Longitude" name="lng">
+                            </div>
+                            <div class="column is-3">
+                                <button class="button is-info submit is-fullwidth is-rounded">Add Station</button>
+                            </div>
+    
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
         #{list items:stations, as:'station'}
         <div class="column is-12">
             <div class="card">
@@ -20,31 +46,5 @@
             </div>
         </div>
         #{/list}
-        <div class="column is-12">
-            <div class="card">
-                <div class="card-content">
-                    <h2 class="title">
-                        Add New Station
-                    </h2>
-                    <form action="/dashboard/addStation" method="post">
-                        <div class="columns is-multiline">
-                            <div class="column is-3">
-                                <input class="input" type="text" placeholder="Station Name" name="name">
-                            </div>
-                            <div class="column is-3">
-                                <input class="input" type="text" placeholder="Latitude" name="lat">
-                            </div>
-                            <div class="column is-3">
-                                <input class="input" type="text" placeholder="Longitude" name="lng">
-                            </div>
-                            <div class="column is-3">
-                                <button class="button is-info submit is-fullwidth">Add Station</button>
-                            </div>
-
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
     </div>
 </div>

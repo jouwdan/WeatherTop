@@ -1,4 +1,4 @@
-<nav class="navbar is-white" role="navigation" aria-label="main navigation">
+<nav class="navbar is-white is-fixed-top" role="navigation" aria-label="main navigation">
   <div class="container">
     <div class="navbar-brand">
       <a class="navbar-item" href="../">
@@ -23,7 +23,7 @@
         #{if session.contains("logged_in_Memberid")}
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">Account</a>
-          <div class="navbar-dropdown is-right">
+          <div class="navbar-dropdown is-right is-boxed">
             <a id="account" class="navbar-item" href="#">My Account</a>
             <a id="logout" class="navbar-item" href="/logout">Log Out</a>
           </div>

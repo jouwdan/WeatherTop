@@ -19,7 +19,7 @@ public class dashboard extends Controller {
         for (Station station:member.stations) {
             WeatherUtility.updateWeather(station);
         }
-        render ("dashboard.html", stations);
+        render ("dashboard.html", member, stations);
     }
 
     public static void addStation(String name, double lat, double lng) {
