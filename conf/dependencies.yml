@@ -2,4 +2,5 @@
 
 require:
     - play 1.5.3
-    - play -> docviewer
+    - org.postgresql -> postgresql 42.2.2:
+        force: true
