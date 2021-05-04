@@ -38,10 +38,10 @@
                         ${station.name}
                     </h2>
                     #{displayInfo station:station/}
-                </div>
-                <div class="card-footer">
-                    <a href="/station/${station.id}" class="card-footer-item has-background-info has-text-light">View Station</a>
-                    <a href="/dashboard/deletestation/${station.id}" class="card-footer-item has-background-danger has-text-light">Delete Station</a>
+                    <div class="buttons is-centered">
+                        <a href="/station/${station.id}"><button class="button is-info is-rounded">View Station</button></a>
+                        <a href="/dashboard/deletestation/${station.id}"><button class="button is-danger is-rounded">Delete Station</button></a>
+                    </div>
                 </div>
             </div>
         </div>
