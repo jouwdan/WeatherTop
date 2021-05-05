@@ -1,4 +1,27 @@
 #{extends 'main.html' /}
 #{set title:'Home' /}
+<section class="hero is-info is-medium">
 #{nav id:"home"/}
 #{homehero /}
+</section>
+<div class="box cta">
+    <p class="has-text-centered">
+        <span class="tag is-success">New!</span>
+        Our new and improved dashboard is now live - check it out!
+    </p>
+</div>
+<div class="container">
+    <div class="columns">
+        <div class="column is-one-half">
+            <br>
+            <img src="@{'/public/images/weather-station.png'}">
+        </div>
+        <div class="column is-one-half">
+            <br><br><br><br>
+            <h2 class="title">The WeatherTop 1000</h2>
+            <br>
+            <p>The WeatherTop 1000 is our first award winning innovation. A low-cost, modular device which takes a set of meteorological readings, displaying them on a simple LCD and connecting to a state of the art web companion app.
+            </p>
+        </div>
+    </div>
+</div>

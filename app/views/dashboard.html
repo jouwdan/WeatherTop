@@ -1,7 +1,11 @@
 #{extends 'main.html' /}
 #{set title:'Dashboard' /}
-#{nav id:"dashboard", member:member /}
+<section class="hero is-info">
+#{nav id:"dashboard" /}
 #{hero /}
+</section>
+<br>
+<div class="block">
 <div class="container">
     <div class="columns is-multiline is-mobile">
         <div class="column is-12">
@@ -47,4 +51,5 @@
         </div>
         #{/list}
     </div>
+</div>
 </div>

@@ -1,4 +1,4 @@
-<nav class="navbar is-white" role="navigation" aria-label="main navigation">
+<nav class="navbar is-info" role="navigation" aria-label="main navigation">
   <div class="container">
     <div class="navbar-brand">
       <a class="navbar-item" href="../">
@@ -21,17 +21,17 @@
       #{/ifnot}
       <div class="navbar-end">
         #{if session.contains("logged_in_Memberid")}
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">Account</a>
-          <div class="navbar-dropdown is-right is-boxed">
-            <a id="account" class="navbar-item" href="/myaccount">My Account</a>
-            <a id="logout" class="navbar-item" href="/logout">Log Out</a>
+        <div class="buttons">
+            <a id="account" class="button is-white is-outlined" href="/myaccount">My Account</a>
+            <a id="logout" class="button is-white" href="/logout">Log Out</a>
           </div>
         </div>
         #{/if}
         #{ifnot session.contains("logged_in_Memberid")}
-        <a id="register" class="navbar-item" href="/register">Register</a>
-        <a id="login" class="navbar-item" href="/login">Log In</a>
+        <div class="buttons">
+          <a id="register" class="button is-white is-outlined" href="/register">Register</a>
+          <a id="login" class="button is-white" href="/login">Log In</a>
+        </div>
         #{/ifnot}
       </div>
     </div>
