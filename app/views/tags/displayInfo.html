@@ -31,8 +31,10 @@
             </div>
             <div class="message-body">
                 <p>
-                    ${_station.readings.temperature.last()} °C <br/>
-                    ${_station.temperatureInFahrenheit} °F
+                    ${_station.readings.temperature.last()} °C <br>
+                    ${_station.temperatureInFahrenheit} °F <br>
+                    min: ${station.minTemp} °C <br>
+                    max: ${station.maxTemp}
                 </p>
             </div>
         </article>

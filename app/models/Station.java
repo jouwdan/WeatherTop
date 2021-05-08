@@ -22,6 +22,8 @@ public class Station extends Model {
     public double feelsLike;
     public String windSpeedToBft;
     public String windDirectionToText;
+    public double minTemp;
+    public double maxTemp;
     public double minWindSpeed;
     public double maxWindSpeed;
     public double minPressure;

@@ -121,6 +121,20 @@ public class WeatherUtility {
           station.feelsLike = WeatherUtility.feelsLike(lastReading.temperature, lastReading.windSpeed);
           station.windSpeedToBft = WeatherUtility.windSpeedToBft(lastReading.windSpeed);
           station.windDirectionToText = WeatherUtility.windDirectionToText(lastReading.windDirection);
+
+          double minTemp = 999999999999.0;
+          double maxTemp = 0.0;
+          for (Reading reading : station.readings) {
+            if (reading.temperature < minTemp) {
+              minTemp = reading.temperature;
+            }
+            if (reading.temperature > maxTemp) {
+              maxTemp = reading.temperature;
+            }
+          }
+          station.minTemp = minTemp;
+          station.maxTemp = maxTemp;
+
           double minWindSpeed = 999999999999.0;
           double maxWindSpeed = 0.0;
           for (Reading reading : station.readings) {
@@ -133,6 +147,7 @@ public class WeatherUtility {
           }
           station.minWindSpeed = minWindSpeed;
           station.maxWindSpeed = maxWindSpeed;
+
           int minPressure = 2147483647;
           int maxPressure = 0;
           for (Reading reading : station.readings) {
