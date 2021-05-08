@@ -160,6 +160,34 @@ public class WeatherUtility {
           }
           station.minPressure = minPressure;
           station.maxPressure = maxPressure;
+
+          if (station.readings.size() > 1) {
+            Reading secondLastReading = station.readings.get(station.readings.size() - 2);
+
+            if (lastReading.temperature > secondLastReading.temperature) {
+                station.temperatureTrend = "arrow-up";
+            } else if (lastReading.temperature < secondLastReading.temperature) {
+                station.temperatureTrend = "arrow-down";
+            } else {
+                station.temperatureTrend = "equals";
+            }
+
+            if (lastReading.windSpeed > secondLastReading.windSpeed) {
+                station.windSpeedTrend = "arrow-up";
+            } else if (lastReading.windSpeed < secondLastReading.windSpeed) {
+                station.windSpeedTrend = "arrow-down";
+            } else {
+                station.windSpeedTrend = "equals";
+            }
+
+            if (lastReading.pressure > secondLastReading.pressure) {
+                station.pressureTrend = "arrow-up";
+            } else if (lastReading.pressure < secondLastReading.pressure) {
+                station.pressureTrend = "arrow-down";
+            } else {
+                station.pressureTrend = "equals";
+            }
+          }
         }
       }
 }

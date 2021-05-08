@@ -36,6 +36,9 @@
                     min: ${_station.minTemp} °C <br>
                     max: ${_station.maxTemp} °C
                 </p>
+                <p class=" has-text-right">
+                    <i class="fas fa-#{verbatim}${_station.temperatureTrend}#{/verbatim}"></i>
+                </p>
             </div>
         </article>
     </div>
@@ -49,6 +52,9 @@
                 <p>${_station.windDirectionToText}</p>
                 <p>min: ${_station.minWindSpeed} km/h</p>
                 <p>max: ${_station.maxWindSpeed} km/h</p>
+                <p class=" has-text-right">
+                    <i class="fas fa-#{verbatim}${_station.windSpeedTrend}#{/verbatim}"></i>
+                </p>
             </div>
         </article>
     </div>
@@ -62,7 +68,9 @@
                 <br>
                 <p>min: ${_station.minPressure} bpa</p>
                 <p>max: ${_station.maxPressure} bpa</p>
-                
+                <p class=" has-text-right">
+                    <i class="fas fa-#{verbatim}${_station.pressureTrend}#{/verbatim}"></i>
+                </p>
             </div>
         </article>
     </div>
