@@ -31,8 +31,8 @@
             </div>
             <div class="message-body">
                 <p>
-                    ${_station.readings.temperature.last()} °C <br> / ${_station.temperatureInFahrenheit} °F <br>
-                    <br>
+                    ${_station.readings.temperature.last()} °C / ${_station.temperatureInFahrenheit} °F <br>
+                    Feels like ${_station.feelsLike} °C<br>
                     min: ${_station.minTemp} °C <br>
                     max: ${_station.maxTemp} °C
                 </p>
@@ -47,7 +47,6 @@
             <div class="message-body">
                 <p>${_station.readings.windSpeed.last()} km/h / ${_station.windSpeedToBft}</p>
                 <p>${_station.windDirectionToText}</p>
-                <p>Feels like ${_station.feelsLike} °C</p>
                 <p>min: ${_station.minWindSpeed} km/h</p>
                 <p>max: ${_station.maxWindSpeed} km/h</p>
             </div>
