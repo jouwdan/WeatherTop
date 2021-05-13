@@ -11,30 +11,30 @@ import play.db.jpa.Model;
 
 @Entity
 public class Station extends Model {
-    public String name;
-    public double latitude;
-    public double longitude;   
-    @OneToMany(cascade = CascadeType.ALL)
-    public List<Reading> readings = new ArrayList<Reading>();
+  public String name;
+  public double latitude;
+  public double longitude;
+  @OneToMany(cascade = CascadeType.ALL)
+  public List<Reading> readings = new ArrayList<Reading>();
 
-    public double temperatureInFahrenheit;
-    public String weatherCodeToString;
-    public double feelsLike;
-    public String windSpeedToBft;
-    public String windDirectionToText;
-    public double minTemp;
-    public double maxTemp;
-    public double minWindSpeed;
-    public double maxWindSpeed;
-    public double minPressure;
-    public double maxPressure;
-    public String temperatureTrend;
-    public String windSpeedTrend;
-    public String pressureTrend;
+  public double temperatureInFahrenheit;
+  public String weatherCodeToString;
+  public double feelsLike;
+  public String windSpeedToBft;
+  public String windDirectionToText;
+  public double minTemp;
+  public double maxTemp;
+  public double minWindSpeed;
+  public double maxWindSpeed;
+  public double minPressure;
+  public double maxPressure;
+  public String temperatureTrend;
+  public String windSpeedTrend;
+  public String pressureTrend;
 
-    public Station(String name, double latitude, double longitude) {
-        this.name = name;
-        this.latitude = latitude;
-        this.longitude = longitude;
-    }
+  public Station(String name, double latitude, double longitude) {
+    this.name = name;
+    this.latitude = latitude;
+    this.longitude = longitude;
+  }
 }

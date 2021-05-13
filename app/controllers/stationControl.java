@@ -9,14 +9,14 @@ import models.Reading;
 import play.Logger;
 import play.mvc.Controller;
 
-public class stationControl extends Controller {    
-    public static void deleteReading (Long id, Long readingid) {
-        Station station = Station.findById(id);
-        Reading reading = Reading.findById(readingid);
-        Logger.info ("Deleting Reading: " + readingid);
-        station.readings.remove(reading);
-        station.save();
-        reading.delete();
-        redirect("/station/" + id);
-    }
+public class stationControl extends Controller {
+  public static void deleteReading(Long id, Long readingid) {
+    Station station = Station.findById(id);
+    Reading reading = Reading.findById(readingid);
+    Logger.info("Deleting Reading: " + readingid);
+    station.readings.remove(reading);
+    station.save();
+    reading.delete();
+    redirect("/station/" + id);
+  }
 }
