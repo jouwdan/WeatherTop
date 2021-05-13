@@ -13,43 +13,43 @@
 
     <div class="navbar-menu">
       #{if session.contains("logged_in_Memberid")}
-        <a id="dashboard" class="navbar-item" href="/dashboard">Dashboard</a>
-        <a id="about" class="navbar-item" href="/about">About</a>
+      <a id="dashboard" class="navbar-item" href="/dashboard">Dashboard</a>
+      <a id="about" class="navbar-item" href="/about">About</a>
       #{/if}
       #{ifnot session.contains("logged_in_Memberid")}
-        <a id="about" class="navbar-item" href="/about">About</a>
+      <a id="about" class="navbar-item" href="/about">About</a>
       #{/ifnot}
       <div class="navbar-end">
         #{if session.contains("logged_in_Memberid")}
         <div class="buttons">
-            <a id="account" class="button is-white is-outlined" href="/myaccount">My Account</a>
-            <a id="logout" class="button is-white" href="/logout">Log Out</a>
-          </div>
+          <a id="account" class="button is-white is-outlined" href="/myaccount">My Account</a>
+          <a id="logout" class="button is-white" href="/logout">Log Out</a>
         </div>
-        #{/if}
-        #{ifnot session.contains("logged_in_Memberid")}
-        <div class="buttons">
-          <a id="register" class="button is-white is-outlined" href="/register">Register</a>
-          <a id="login" class="button is-white" href="/login">Log In</a>
-        </div>
-        #{/ifnot}
       </div>
+      #{/if}
+      #{ifnot session.contains("logged_in_Memberid")}
+      <div class="buttons">
+        <a id="register" class="button is-white is-outlined" href="/register">Register</a>
+        <a id="login" class="button is-white" href="/login">Log In</a>
+      </div>
+      #{/ifnot}
     </div>
+  </div>
   </div>
 </nav>
 <script>
   $("#${_id}").addClass("is-active has-text-weight-semibold");
 </script>
 <script>
-  $(document).ready(function() {
+  $(document).ready(function () {
 
-// Check for click events on the navbar burger icon
-$(".navbar-burger").click(function() {
+    // Check for click events on the navbar burger icon
+    $(".navbar-burger").click(function () {
 
-    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-    $(".navbar-burger").toggleClass("is-active");
-    $(".navbar-menu").toggleClass("is-active");
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      $(".navbar-burger").toggleClass("is-active");
+      $(".navbar-menu").toggleClass("is-active");
 
-});
-});
+    });
+  });
 </script>

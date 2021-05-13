@@ -20,7 +20,10 @@
                 <td>${reading.windSpeed}</td>
                 <td>${reading.windDirection}</td>
                 <td>${reading.pressure}</td>
-                <td><a href="/station/${_station.id}/deletereading/${reading.id}"><div class="icon-text"><span class="icon button is-danger "><i class="fas fa-trash-alt"></i></span></div></a></td>
+                <td><a href="/station/${_station.id}/deletereading/${reading.id}">
+                        <div class="icon-text"><span class="icon button is-danger "><i
+                                    class="fas fa-trash-alt"></i></span></div>
+                    </a></td>
             </tr>
             #{/list}
         </tbody>
