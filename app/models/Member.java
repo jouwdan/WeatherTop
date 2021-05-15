@@ -10,10 +10,7 @@ import java.util.List;
 
 @Entity
 public class Member extends Model {
-  public String firstname;
-  public String lastname;
-  public String email;
-  public String password;
+  public String firstname, lastname, email, password;
   public boolean isLoggedIn;
 
   @OneToMany(cascade = CascadeType.ALL)

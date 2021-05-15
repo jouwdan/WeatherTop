@@ -19,7 +19,7 @@ public class dashboard extends Controller {
     Member member = accounts.getLoggedInMember();
     List<Station> stations = member.stations;
 
-    // stackoverflow link for this fix: https://stackoverflow.com/a/44096027
+    // stackoverflow link used to get this working: https://stackoverflow.com/a/44096027
     Collections.sort(stations, new Comparator<Station>() {
       public int compare(Station station, Station t1) {
         String s1 = station.name;

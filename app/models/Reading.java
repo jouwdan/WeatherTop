@@ -8,12 +8,8 @@ import play.db.jpa.Model;
 @Entity
 public class Reading extends Model {
   public Date date;
-  public int code;
-  public double temperature;
-  public double windSpeed;
-  public double windDirection;
-  public int pressure;
-  public double windChill;
+  public int code, pressure;
+  public double temperature, windSpeed, windDirection, windChill;
 
   public Reading(Date date, int code, double temperature, double windSpeed, double windDirection, int pressure) {
     this.date = date;
