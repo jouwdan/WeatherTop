@@ -1,31 +1,32 @@
 <div class="block">
     <table class="table is-bordered is-fullwidth">
-        <thead>
-            <tr>
-                <th>Date / Time</th>
-                <th>Code</th>
-                <th>Temp</th>
-                <th>Wind Speed</th>
-                <th>Wind Direction</th>
-                <th>Pressure</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            #{list items:_station.readings, as:'reading'}
-            <tr>
-                <td>${reading.date}</td>
-                <td>${reading.code}</td>
-                <td>${reading.temperature}</td>
-                <td>${reading.windSpeed}</td>
-                <td>${reading.windDirection}</td>
-                <td>${reading.pressure}</td>
-                <td><a href="/station/${_station.id}/deletereading/${reading.id}">
-                        <div class="icon-text"><span class="icon button is-danger "><i
-                                    class="fas fa-trash-alt"></i></span></div>
-                    </a></td>
-            </tr>
-            #{/list}
-        </tbody>
+      <thead>
+        <tr>
+          <th>Date / Time</th>
+          <th>Code</th>
+          <th>Temp</th>
+          <th>Wind Speed</th>
+          <th>Wind Direction</th>
+          <th>Pressure</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        #{list items:_station.readings, as:'reading'}
+        <tr>
+          <td>${reading.date}</td>
+          <td>${reading.code}</td>
+          <td>${reading.temperature}</td>
+          <td>${reading.windSpeed}</td>
+          <td>${reading.windDirection}</td>
+          <td>${reading.pressure}</td>
+          <td>
+            <a href="/station/${_station.id}/deletereading/${reading.id}">
+              <div class="icon-text"><span class="icon button is-danger "><i class="fas fa-trash-alt"></i></span></div>
+            </a>
+          </td>
+        </tr>
+        #{/list}
+      </tbody>
     </table>
-</div>
+  </div>
