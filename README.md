@@ -5,6 +5,6 @@ This web app is developed with [Play Framework 1.5.3](https://www.playframework.
 
 A companion video explaining the code base can be found at [this YouTube link](https://www.youtube.com/watch?v=TqjRBALSBjQ) by Jordan Harrison, student number 20095397 at Waterford Institute of Technology.
 
-In hindsight, the devlopment of these versions should have been done using a separate development branch, but by the time I realised this I had already completed the first release.
+In hindsight, the development of these versions should have been done using a separate development branch, but by the time I realised this I had already completed the first release.
 
 Any questions, get in touch on Slack or email 20095397@mail.wit.ie
